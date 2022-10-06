@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Categories",
+  "info": {
+    "name": "category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "projects": {
+      "via": "categories",
+      "collection": "project"
+    }
+  }
+}

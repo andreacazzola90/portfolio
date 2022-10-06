@@ -3,19 +3,19 @@ import apolloClient from "../lib/apollo";
 import articlesQuery from '../graphql/articles.gql';
 import { ArticlesQuery } from '../graphql/types';
 
-import Default  from '../templates/default';
+import Default from '../templates/default';
 
 import BannerTicker from '../components/bannerTicker/bannerTicker';
 
-const About = ({ data }: { data: ArticlesQuery } ) => {  
+const About = ({ data }: { data: ArticlesQuery }) => {
   return (
     <Default title="Jonasleonhard.de" description="Jonas Leonhard About Page">
       <>
-      about Page...
-       <BannerTicker />
+        about Page...
+        <BannerTicker />
       </>
     </Default>
-    )
+  )
 }
 
 

@@ -8,6 +8,10 @@ module.exports = {
         return config;
     },
     webpackDevMiddleware: (config) => {
-        return config;
+        config.watchOptions = {
+            poll: 1000,
+            aggregateTimeout: 300,
+        }
+        return config
     },
 };
