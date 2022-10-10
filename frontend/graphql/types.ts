@@ -23,4 +23,8 @@ export interface ProjectQuery {
 interface ProjectQueryItem {
     id: number,
     title: string
+    gallery: {
+        id: string
+        url: string
+    }
 }

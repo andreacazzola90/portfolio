@@ -8,6 +8,13 @@ const StyledProjectList = styled.div`
     width: 100%;
     height: 100vh;
     background: white;
+    .projects--preview{
+
+        
+    }
+    .project--preview{
+
+    }
 `;
 
 
