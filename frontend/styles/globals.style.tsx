@@ -26,6 +26,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  .img--fluid{
+    width:100%;
+  }
 `
 
 export default GlobalStyle;

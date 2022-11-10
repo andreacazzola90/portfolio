@@ -18,17 +18,32 @@ import StyledProjects from "./projects.style";
 const Index = ({ project }) => {
   const router = useRouter();
 
+  const { sections } = project;
+
   console.log(project)
   return (
     <StyledProjects>
       <Default title="Jonasleonhard.de" description="Jonas Leonhard Index Page">
-        <div className="pdp__header">
-          <div className="header__content">
-            <h1 className="header__title"><a href={`/projects/${project.id}`}>{project.title}</a></h1>
-            <p>{project.id}</p>
+        <div className="pdp">
+          <div className="pdp__header">
+            <div className="header__content">
+              <h1 className="header__title"><a href={`/projects/${project.id}`}>{project.title}</a></h1>
+              <p>{project.id}</p>
+            </div>
+            <img src={process.env.NEXT_PUBLIC_CLIENT_APOLLO_CMS_URL + project.gallery[0].url} alt={project.gallery[0].alt} className="header__image img--fluid" />
           </div>
-          <img src={process.env.NEXT_PUBLIC_CLIENT_APOLLO_CMS_URL + project.gallery[0].url} alt={project.gallery[0].alt} className="header__image img--fluid" />
-          {JSON.stringify(project)}
+          <div className="pdp__sections">
+            {sections.map((s) =>
+              <div>
+                <div className="section__content">
+                  <h1 className="section__title"><a href={`/projects/${s.id}`}>{s.title}</a></h1>
+                  <p>{s.content}</p>
+                </div>
+                <img src={process.env.NEXT_PUBLIC_CLIENT_APOLLO_CMS_URL + s.gallery[0].url} alt={s.gallery[0].alt} className="section__image img--fluid" />
+              </div>
+            )}
+
+          </div>
         </div>
       </Default>
     </StyledProjects>
