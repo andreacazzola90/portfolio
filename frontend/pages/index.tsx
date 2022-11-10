@@ -11,16 +11,15 @@ import ProjectCarousel from '../components/projectCarousel/projectCarousel';
 import ProjectList from '../components/projectList/projectList';
 import ContactFormTeaser from '../components/contactFormTeaser/contactFormTeaser';
 
-const Index = ({ data }: { data: GeneralQuery }) => {
+const Index = ({ projects }) => {
+  console.log(projects)
   return (
     <Default title="Jonasleonhard.de" description="Jonas Leonhard Index Page">
       <>
-        <StartScreen />
-        {JSON.stringify(data)}
-        <ProjectCarousel />
-        {JSON.stringify(data.projects)}
-        {console.log(data.projects)}
-        <ProjectList items={data.projects} />
+
+        {/* <StartScreen />
+        <ProjectCarousel /> */}
+        <ProjectList projects={projects} />
         <ContactFormTeaser />
       </>
     </Default>
@@ -29,18 +28,12 @@ const Index = ({ data }: { data: GeneralQuery }) => {
 
 
 Index.getInitialProps = async () => {
-  const articles = await apolloClient.query({
-    query: articlesQuery
-  })
-  const projects = await apolloClient.query({
+
+  const { data } = await apolloClient.query({
     query: projectsQuery
-  })
-  return {
-    data: {
-      articles: articles,
-      projects: projects
-    }
-  };
+  });
+  return data;
+
 };
 
 

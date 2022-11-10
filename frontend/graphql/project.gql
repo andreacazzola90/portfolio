@@ -1,6 +1,22 @@
-query Project {
-  project(id: 1) {
+query Project($id:ID!){
+  project(id:$id){
     id
     title
+    gallery{
+      id
+      url
+    }   
   }
 }
+
+
+# query Project($id:ID!){
+#   project(id:$id){
+#     id
+#     title
+#     gallery{
+#       id
+#       url
+#     }   
+#   }
+# }
