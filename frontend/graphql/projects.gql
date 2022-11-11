@@ -1,10 +1,10 @@
 query Projects {
-  projects{
+  projects {
     id
     title
-    gallery{
+    gallery {
       id
       url
-    }   
+    }
   }
 }

@@ -1,0 +1,16 @@
+query Categories {
+  categories {
+    id
+    title
+    description
+    projects {
+      id
+      title
+      content
+      gallery {
+        id
+        url
+      }
+    }
+  }
+}
