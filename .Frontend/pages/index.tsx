@@ -17,8 +17,8 @@ const Index = ({ projects }) => {
     <Default title="Jonasleonhard.de" description="Jonas Leonhard Index Page">
       <>
 
-        <StartScreen />
-        <ProjectCarousel />
+        {/* <StartScreen />
+        <ProjectCarousel /> */}
         <ProjectList projects={projects} />
         <ContactFormTeaser />
       </>
