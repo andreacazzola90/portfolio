@@ -11,7 +11,7 @@ import ProjectCarousel from '../components/projectCarousel/projectCarousel';
 import ProjectList from '../components/projectList/projectList';
 import ContactFormTeaser from '../components/contactFormTeaser/contactFormTeaser';
 
-const Index = ({ projects }) => {
+const Index = ({ projects }: any) => {
   console.log(projects)
   return (
     <Default title="Jonasleonhard.de" description="Jonas Leonhard Index Page">

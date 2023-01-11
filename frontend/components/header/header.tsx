@@ -6,10 +6,8 @@ type HeaderProps = {};
 const Header = ({ }: HeaderProps) => {
     return (
         <StyledHeader>
-            <Link href="/">
-                <a className="header__logo" >
-                    Cazzola Andrea
-                </a>
+            <Link href="/" className="header__logo" >
+                Cazzola Andrea
             </Link>
             <nav className="header__nav">
                 <Link href="/projects">

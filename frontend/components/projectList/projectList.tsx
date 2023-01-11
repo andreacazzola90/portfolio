@@ -10,11 +10,11 @@ const ProjectList = ({ projects }: any) => {
     return (
         <StyledProjectList>
             <div className="projects--preview">
-                {projects?.map((p, i) => (
+                {projects?.map((p: any, i: number) => (
                     <div key={i} className="project--preview text-gray-500 font-normal mt-1">
                         <h3><a href={`/projects/${p.id}`}>{p.title}</a></h3>
                         <p>{p.id}</p>
-                        {p.gallery.map((img, i) =>
+                        {p.gallery.map((img: any, i: number) =>
                             <img key={i} src={process.env.NEXT_PUBLIC_CLIENT_APOLLO_CMS_URL + img.url} alt={img.alt} className="img--fluid" />
                         )}
                     </div>

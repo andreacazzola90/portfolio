@@ -1,4 +1,4 @@
-import apolloClient from "../../lib/apollo";
+import apolloClient from '../../lib/apollo';
 
 import articlesQuery from '../../graphql/articles.gql';
 import projectQuery from '../../graphql/project.gql';
@@ -15,7 +15,7 @@ import { useRouter } from 'next/router'
 
 import StyledProjects from "./projects.style";
 
-const Index = ({ project }) => {
+const Index = ({ project }: any) => {
   const router = useRouter();
 
   const { sections } = project;
@@ -33,7 +33,7 @@ const Index = ({ project }) => {
             <img src={process.env.NEXT_PUBLIC_CLIENT_APOLLO_CMS_URL + project.gallery[0].url} alt={project.gallery[0].alt} className="header__image img--fluid" />
           </div>
           <div className="pdp__sections">
-            {sections.map((s) =>
+            {sections.map((s: any) =>
               <div>
                 <div className="section__content">
                   <h1 className="section__title"><a href={`/projects/${s.id}`}>{s.title}</a></h1>
@@ -51,7 +51,7 @@ const Index = ({ project }) => {
 }
 
 
-Index.getInitialProps = async (router) => {
+Index.getInitialProps = async (router: any) => {
   const { data } = await apolloClient.query({
     query: projectQuery,
     variables: { id: `${router.query.id}` }

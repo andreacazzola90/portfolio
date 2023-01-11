@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { color, mq } from '../styles/helper';
 
-import Default  from '../templates/default';
+import Default from '../templates/default';
 
 const StyledError = styled.div`
     margin: auto;
@@ -35,20 +35,20 @@ const StyledError = styled.div`
 
 const Error = ({
   statusCode
-}) => {
+}: any) => {
   return (
-      <Default title={`${statusCode} Fehler`} description="Fehler ist aufgetreten, diese Seite konnte nicht gefunden werden" noindex={true} nofollow={true} >
-        <StyledError>
-            <p>
-                <span>{statusCode}</span>
-                Diese Seite konnte nicht gefunden werden
-            </p>
-        </StyledError>
-      </Default>
+    <Default title={`${statusCode} Fehler`} description="Fehler ist aufgetreten, diese Seite konnte nicht gefunden werden" noindex={true} nofollow={true} >
+      <StyledError>
+        <p>
+          <span>{statusCode}</span>
+          Diese Seite konnte nicht gefunden werden
+        </p>
+      </StyledError>
+    </Default>
   );
 };
 
-Error.getInitialProps = async ctx => {
+Error.getInitialProps = async (ctx: any) => {
   let statusCode = null;
   if (ctx.res) {
     statusCode = ctx.res.statusCode;
